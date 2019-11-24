@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root "contact#new"
+  root "home#index"
   resources :contact, only: %i(new create)
 end
