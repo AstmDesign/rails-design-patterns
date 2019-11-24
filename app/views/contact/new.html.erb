@@ -1,5 +1,5 @@
-<%= form_with(url: "/contact", method: "post") do %>
+<%= form_with(url: "/contact", method: "post", local: true) do %>
   <%= label_tag(:q, "Address:") %>
-  <%= text_field_tag(:q) %>
+  <%= text_field_tag(:address) %>
   <%= submit_tag("Save") %>
 <% end %>
