@@ -1,24 +1,23 @@
 # README
+This repo strives to outline all of the rails patterns with basic examples of each one.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Service Objects
+#### Naming:
+* Name service objects so that they end in 'or' (i.e. AccountCreator, ProfileAuthenticator) or name them with commands/actions words (i.e. CompleteTask, CreateAccount, etc).
 
-Things you may want to cover:
+#### Structure:
+* Your service objects should have one public method like `call`, `perform`, etc.
+* Ideally, you should not instantiate your object directly, but have the `call` method be a static method that instantiates an instance of itself.
+* Each service object's constructor should only set instance variables. Any other things should be handled by private methods.
+* Each service object should only do one thing. If you need a service object to handle more than one responsibility, create two service objects.
+* Have your service objects return values in a consistent way.
+  * Return:
+    * true / false
+    * enum
+    * the service object itself
+    * return a value
+  * The error handling should be done in the calling method.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Resources:
+* https://www.toptal.com/ruby-on-rails/rails-service-objects-tutorial
+* https://medium.com/selleo/essential-rubyonrails-patterns-part-1-service-objects-1af9f9573ca1
