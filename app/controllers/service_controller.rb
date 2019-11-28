@@ -1,11 +1,18 @@
 class ServiceController < ApplicationController
-  helper_method :create_account_result
-  helper_method :boolean_update_profile_result
+  helper_method :value_update_account_result
   helper_method :object_create_profile_result
+  helper_method :boolean_update_profile_result
+  helper_method :create_account_result
 
   def index; end
 
 private
+
+  def value_update_account_result
+    return "profile created, code: #{value_update_account}" if value_update_account
+
+    "value_update_account: something failed"
+  end
 
   def object_create_profile_result
     return 'profile created' if object_create_profile.success?
@@ -23,6 +30,10 @@ private
     return 'profile updated' if boolean_update_profile
 
     'boolean_update_profile: something failed'
+  end
+
+  def value_update_account
+    @value_update_account ||= Value::UpdateAccount.call("updated successfully")
   end
 
   def object_create_profile
