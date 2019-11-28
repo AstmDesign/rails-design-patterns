@@ -1,4 +1,5 @@
 class ServiceController < ApplicationController
+  helper_method :enum_delete_account_result
   helper_method :value_update_account_result
   helper_method :object_create_profile_result
   helper_method :boolean_update_profile_result
@@ -7,6 +8,19 @@ class ServiceController < ApplicationController
   def index; end
 
 private
+
+  def enum_delete_account_result
+    case enum_delete_account
+    when ::Enum::DeleteAccount::SUCCESS
+      return "account deleted"
+    when :missing
+    when ::Enum::DeleteAccount::MISSING
+      return "account data missing"
+    when :unknown
+    when ::Enum::DeleteAccount::UNKNONW
+      return "account data: unknown error"
+    end
+  end
 
   def value_update_account_result
     return "profile created, code: #{value_update_account}" if value_update_account
@@ -30,6 +44,10 @@ private
     return 'profile updated' if boolean_update_profile
 
     'boolean_update_profile: something failed'
+  end
+
+  def enum_delete_account
+    @enum_delete_account ||= Enum::DeleteAccount.call("deleted successfully")
   end
 
   def value_update_account
