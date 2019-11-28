@@ -1,4 +1,4 @@
-class AccountService
+class CreateAccount
   def self.call(account)
     new(account).call
   end
@@ -9,7 +9,7 @@ class AccountService
 
   # Return true/false and let your controller handle any errors.
   def call
-    if account == 'account'
+    if account == 'create account'
       return true
     end
     false
