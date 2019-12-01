@@ -19,6 +19,11 @@ This repo strives to outline all of the rails patterns with basic examples of ea
   * The error handling should be done in the calling method (i.e. controller).
 * Consider using named parameters with your public method (i.e. `call`), to simplify the signature.
 
+### Query Objects
+* A query object is used when you want to interact with more than one relation and a scope is not appropriate.
+* You should have one public method like `call`, similar to a service object.
+* Consider namespacing it in a module.
+
 ### Resources:
 * https://www.toptal.com/ruby-on-rails/rails-service-objects-tutorial
 * https://medium.com/selleo/essential-rubyonrails-patterns-part-1-service-objects-1af9f9573ca1
