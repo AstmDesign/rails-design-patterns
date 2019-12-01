@@ -14,9 +14,10 @@ This repo strives to outline all of the rails patterns with basic examples of ea
   * Return:
     * true / false
     * enum
-    * the service object itself
+    * an instance of itself
     * return a value
-  * The error handling should be done in the calling method.
+  * The error handling should be done in the calling method (i.e. controller).
+* Consider using named parameters with your public method (i.e. `call`), to simplify the signature.
 
 ### Resources:
 * https://www.toptal.com/ruby-on-rails/rails-service-objects-tutorial
