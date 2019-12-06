@@ -45,6 +45,16 @@ This repo strives to outline all of the rails patterns with basic examples of ea
   * The response returned from your new method should return a result similar in structure to the original API call.
   * Any client that you build should be abstracted enough to be re-usable by another app. It should not have any knowledge of your app.
 
+#### Form Objects:
+* Used when you need to offload some functionality into a class than handles validation from form input. At lot of times these are combinations of two models, although a form object can also be use for a form that is not backed by a model.
+
+* Usage:
+  * Append the word: `Form` after each
+  * Have the form object's interface conform (as much as possible) to a model (i.e. have a `save` method).
+    * The method on the form that stores data should be names either `save` or `save!`.
+  * If beneficial, include validations on your form object.
+    * Have a test for `valid?` before `save` returns `true`, for instance.
+
 --
 
 Left Off Here:
