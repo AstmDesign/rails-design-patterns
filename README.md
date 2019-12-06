@@ -55,6 +55,18 @@ This repo strives to outline all of the rails patterns with basic examples of ea
   * If beneficial, include validations on your form object.
     * Have a test for `valid?` before `save` returns `true`, for instance.
 
+
+#### View Object
+A class that wraps data from the model to provide output more useful for the view layer. Typically the object would include methods that may have conditionals and add strings to the output. This way our view can just call these methods (i.e. `myview.status`) instead of having logic or extra formatting in the view.
+
+##### Types
+###### Presentor
+The presenter pattern is a basic way to accompish this. You can create a class that inherits from `SimpleDelegator` that adds additional methods. Wrapping your model in this class will give you controller access to these methods. This way your controller can just call a single method for its output instead of having to have a lot of conditionals and logic in private methods to format data for your view. Typical pattern: `my_presenter = MyPresenter.new(MyModel.new)`.
+
+###### Decorator
+###### ActionView::Component
+
+
 --
 
 Left Off Here:
