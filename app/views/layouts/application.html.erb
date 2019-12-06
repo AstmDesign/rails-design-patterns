@@ -10,6 +10,14 @@
   </head>
 
   <body>
+  <nav>
+    <ul>
+      <li><%= link_to "Contact Form", new_contact_path %></li>
+      <li><%= link_to "Service Objects", service_index_path %></li>
+      <li><%= link_to "Presenters", presenter_index_path %></li>
+      <li><%= link_to "Decorators", travel_index_path %></li>
+    </ul>
+  </nav>
     <% flash.each do |_, message| %>
       <%= message %>
     <% end %>
