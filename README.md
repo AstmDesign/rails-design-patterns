@@ -64,6 +64,8 @@ A class that wraps data from the model to provide output more useful for the vie
 The presenter pattern is a basic way to accompish this. You can create a class that inherits from `SimpleDelegator` that adds additional methods. Wrapping your model in this class will give you controller access to these methods. This way your controller can just call a single method for its output instead of having to have a lot of conditionals and logic in private methods to format data for your view. Typical pattern: `my_presenter = MyPresenter.new(MyModel.new)`.
 
 ###### Decorator
+Usually you will use a decorator to add additional functionality to a model. Things like more complicated calculations and are not related to the model's data source could be moved to a decorator. This way your controller can call on this decorated object and have access to the methods. Without the decorator, these calculation methods would have to reside in either the controller (as private methods) or in your model. Either way it would lead to a larger controller/model.
+
 ###### ActionView::Component
 
 

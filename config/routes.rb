@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :contact, only: %i(new create)
   resources :service, only: %i(index)
   resources :presenter, only: %i(index)
+  resources :travel, only: %i(index)
 end
