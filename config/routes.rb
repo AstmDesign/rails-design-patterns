@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :service, only: %i(index)
   resources :presenter, only: %i(index)
   resources :travel, only: %i(index)
+  resources :component, only: %i(index)
 end

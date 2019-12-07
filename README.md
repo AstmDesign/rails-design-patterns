@@ -67,7 +67,7 @@ The presenter pattern is a basic way to accompish this. You can create a class t
 Usually you will use a decorator to add additional functionality to a model. Things like more complicated calculations and are not related to the model's data source could be moved to a decorator. This way your controller can call on this decorated object and have access to the methods. Without the decorator, these calculation methods would have to reside in either the controller (as private methods) or in your model. Either way it would lead to a larger controller/model.
 
 ###### ActionView::Component
-
+Allows you to add components that have a class backing them to encase chunks of HTML that can be unit tested. These are simliar to React components.
 
 --
 
