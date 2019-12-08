@@ -1,6 +1,9 @@
 # README
 This repo strives to outline all of the rails patterns with basic examples of each one.
 
+### Value Object:
+* Used to consolidate data together into one object and eliminate data clumps. Usually these objects are just POROs.
+
 ### Service Objects
 #### Naming:
 * Name service objects so that they end in 'or' (i.e. AccountCreator, ProfileAuthenticator) or name them with commands/actions words (i.e. CompleteTask, CreateAccount, etc).
@@ -70,9 +73,6 @@ Usually you will use a decorator to add additional functionality to a model. Thi
 Allows you to add components that have a class backing them to encase chunks of HTML that can be unit tested. These are simliar to React components.
 
 --
-
-Left Off Here:
-https://medium.com/selleo/essential-rubyonrails-patterns-form-objects-b199aada6ec9
 
 ### Resources:
 * https://www.toptal.com/ruby-on-rails/rails-service-objects-tutorial
