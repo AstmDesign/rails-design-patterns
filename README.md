@@ -97,3 +97,6 @@ Allows you to add components that have a class backing them to encase chunks of 
 - docker-compose build (run if you change the Gemfile or Dockerfile)
 - docker-compose run patterns yarn install --check-files
 - docker-compose up
+
+#### Attach to Running Terminal:
+`docker run -it [image ID] bash`
